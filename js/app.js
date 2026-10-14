@@ -3,7 +3,8 @@ CA:"",
 BUY_URL:"",
 CHAIN:"solana",
 PAIR:"",
-X_URL:"",
+X_URL:"https://x.com/altaiusmax_x",
+TG_URL:"https://t.me/altaiumax_tg",
 REFRESH_SECONDS:60,
 ROTATE_SECONDS:7,
 HERO_VIDEO:""
@@ -148,7 +149,7 @@ var NAI_ZH={
 "t113b":"来自标记的海报",
 "t114":"社区",
 "t115":"加入 $Altaius <em>这边</em>。",
-"t116":"图画、符号和更新都在这个页面上。",
+"t116":"图画和符号在这个页面上。更新发在 X 和 Telegram。",
 "t117":"看来历",
 "t122":"Solana 上阿尔泰乌斯·马克西穆斯的社区币。",
 "t123":"导航",
@@ -529,6 +530,13 @@ en.forEach(function(x){if(!x.isIntersecting)return;var t=x.target;t.classList.ad
 items.forEach(function(el){io.observe(el)});
 }
 
+function setupSocial(){
+var x=(C.X_URL||"").trim();
+var tg=(C.TG_URL||"").trim();
+if(x)all("[data-x]").forEach(function(a){a.href=x;a.target="_blank";a.rel="noopener"});
+if(tg)all("[data-tg]").forEach(function(a){a.href=tg;a.target="_blank";a.rel="noopener"});
+}
+setupSocial();
 setupToken();
 setupLang();
 setText("year",String(new Date().getFullYear()));
